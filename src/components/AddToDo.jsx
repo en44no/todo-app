@@ -14,8 +14,9 @@ import ToDoContext from '../context/ToDoContext';
 
 const AddToDo = () => {
   const [inputValue, setInputValue] = useState('');
-  const { getToDos, addToDo } = useContext(ToDoContext);
+  const { toDos, getToDos, addToDo } = useContext(ToDoContext);
   const toast = useToast();
+  const toastId = 2;
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -23,20 +24,33 @@ const AddToDo = () => {
 
   function createToDo() {
     if (inputValue !== '') {
-      addToDo(inputValue);
-      setInputValue('');
-      getToDos();
-      toast({
-        title: 'Tarea creada.',
-        description: `Has creado la tarea con éxito.`,
-        status: 'success',
-        duration: 5000,
-        position: 'bottom-right',
-        isClosable: true,
-      });
+      if (!toDos.find((t) => t.title === inputValue)) {
+        setInputValue('');
+        addToDo(inputValue);
+        getToDos();
+        toast({
+          title: 'Tarea creada.',
+          description: 'Has creado la tarea con éxito.',
+          status: 'success',
+          duration: 5000,
+          position: 'bottom-right',
+          isClosable: true,
+        });
+      } else {
+        if (!toast.isActive(toastId)) {
+          toast({
+            id: 2,
+            title: 'Error al crear la tarea.',
+            description: 'Ya tienes una tarea con esa descripción.',
+            status: 'warning',
+            duration: 5000,
+            position: 'bottom-right',
+            isClosable: true,
+          });
+        }
+      }
     } else {
-      const id = 2;
-      if (!toast.isActive(id)) {
+      if (!toast.isActive(toastId)) {
         toast({
           id: 2,
           title: 'Error al crear tarea.',
