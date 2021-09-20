@@ -9,7 +9,7 @@ const ToDoState = (props) => {
     if (allToDos != null) {
       setToDos(allToDos);
     } else {
-      setToDos([{ title: 'comer' }]);
+      setToDos([]);
     }
   };
 
