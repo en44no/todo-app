@@ -22,6 +22,13 @@ const AddToDo = () => {
     setInputValue(event.target.value);
   };
 
+  const enterPressed = (event) => {
+    var code = event.keyCode || event.which;
+    if (code === 13) {
+      createToDo();
+    }
+  };
+
   function createToDo() {
     if (inputValue !== '') {
       if (!toDos.find((t) => t.title === inputValue)) {
@@ -95,6 +102,7 @@ const AddToDo = () => {
             fontSize='1rem'
             onChange={handleChange}
             value={inputValue}
+            onKeyUp={enterPressed}
             _focus={{ border: 'none' }}
           />
           <InputRightElement
