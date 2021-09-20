@@ -6,6 +6,7 @@ import {
   Input,
   Spinner,
   IconButton,
+  useToast,
 } from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
 import React, { useState, useContext } from 'react';
@@ -14,15 +15,39 @@ import ToDoContext from '../context/ToDoContext';
 const AddToDo = () => {
   const [inputValue, setInputValue] = useState('');
   const { getToDos, addToDo } = useContext(ToDoContext);
+  const toast = useToast();
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
   };
 
   function createToDo() {
-    addToDo(inputValue);
-    setInputValue('');
-    getToDos();
+    if (inputValue !== '') {
+      addToDo(inputValue);
+      setInputValue('');
+      getToDos();
+      toast({
+        title: 'Tarea creada.',
+        description: `Has creado la tarea con éxito.`,
+        status: 'success',
+        duration: 5000,
+        position: 'bottom-right',
+        isClosable: true,
+      });
+    } else {
+      const id = 2;
+      if (!toast.isActive(id)) {
+        toast({
+          id: 2,
+          title: 'Error al crear tarea.',
+          description: 'Debes agregar una descripción.',
+          status: 'error',
+          duration: 5000,
+          position: 'bottom-right',
+          isClosable: true,
+        });
+      }
+    }
   }
 
   return (
