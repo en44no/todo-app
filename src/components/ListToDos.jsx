@@ -2,6 +2,7 @@ import { Container, Box, IconButton, Grid, GridItem } from '@chakra-ui/react';
 import { DeleteIcon, CheckIcon } from '@chakra-ui/icons';
 import React, { useContext, useEffect } from 'react';
 import ToDoContext from '../context/ToDoContext';
+import RemoveToDo from './RemoveToDo';
 
 const ListToDos = () => {
   const { toDos, getToDos } = useContext(ToDoContext);
@@ -50,17 +51,7 @@ const ListToDos = () => {
                       icon={<CheckIcon color='green.500' />}
                     />
                   </Box>
-                  <Box
-                    _hover={{
-                      transition: 'transform .2s',
-                      transform: 'scale(1.05)',
-                    }}
-                  >
-                    <IconButton
-                      variant='ghost'
-                      icon={<DeleteIcon color='red.500' />}
-                    />
-                  </Box>
+                  <RemoveToDo toDo={toDo} />
                 </GridItem>
               </Grid>
             ))
