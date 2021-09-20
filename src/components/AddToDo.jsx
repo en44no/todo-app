@@ -16,7 +16,6 @@ const AddToDo = () => {
   const [inputValue, setInputValue] = useState('');
   const { toDos, getToDos, addToDo } = useContext(ToDoContext);
   const toast = useToast();
-  const toastId = 2;
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -35,16 +34,24 @@ const AddToDo = () => {
         setInputValue('');
         addToDo(inputValue);
         getToDos();
-        toast({
-          title: 'Tarea creada.',
-          description: 'Has creado la tarea con éxito.',
-          status: 'success',
-          duration: 5000,
-          position: 'bottom-right',
-          isClosable: true,
-        });
+        const id = 1;
+        if (!toast.isActive(id)) {
+          toast({
+            id: 1,
+            title: 'Tarea creada.',
+            description: 'Has creado la tarea con éxito.',
+            status: 'success',
+            duration: 5000,
+            position: 'bottom-right',
+            isClosable: true,
+          });
+          setTimeout(() => {
+            toast.close();
+          }, 5000);
+        }
       } else {
-        if (!toast.isActive(toastId)) {
+        const id = 2;
+        if (!toast.isActive(id)) {
           toast({
             id: 2,
             title: 'Error al crear la tarea.',
@@ -54,12 +61,16 @@ const AddToDo = () => {
             position: 'bottom-right',
             isClosable: true,
           });
+          setTimeout(() => {
+            toast.close();
+          }, 5000);
         }
       }
     } else {
-      if (!toast.isActive(toastId)) {
+      const id = 3;
+      if (!toast.isActive(id)) {
         toast({
-          id: 2,
+          id: 3,
           title: 'Error al crear tarea.',
           description: 'Debes agregar una descripción.',
           status: 'error',
@@ -67,6 +78,9 @@ const AddToDo = () => {
           position: 'bottom-right',
           isClosable: true,
         });
+        setTimeout(() => {
+          toast.close();
+        }, 5000);
       }
     }
   }
