@@ -9,20 +9,17 @@ const RemoveToDo = (toDo) => {
 
   const remove = () => {
     removeToDo(toDo.toDo.title);
-    const id = 4;
-    if (!toast.isActive(id)) {
-      toast({
-        id: 4,
-        title: 'Tarea eliminada con éxito.',
-        status: 'success',
-        duration: 5000,
-        position: 'bottom-right',
-        isClosable: true,
-      });
-      setTimeout(() => {
-        toast.close();
-      }, 5000);
-    }
+    toast({
+      title: 'Tarea eliminada.',
+      description: 'Has eliminado la tarea.',
+      status: 'success',
+      duration: 5000,
+      position: 'bottom-right',
+      isClosable: true,
+    });
+    setTimeout(() => {
+      toast.close();
+    }, 5000);
     getToDos();
   };
 
