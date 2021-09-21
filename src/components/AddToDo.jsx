@@ -34,21 +34,17 @@ const AddToDo = () => {
         setInputValue('');
         addToDo(inputValue);
         getToDos();
-        const id = 1;
-        if (!toast.isActive(id)) {
-          toast({
-            id: 1,
-            title: 'Tarea creada.',
-            description: 'Has creado la tarea con éxito.',
-            status: 'success',
-            duration: 5000,
-            position: 'bottom-right',
-            isClosable: true,
-          });
-          setTimeout(() => {
-            toast.close();
-          }, 5000);
-        }
+        toast({
+          title: 'Tarea creada.',
+          description: 'Has creado la tarea.',
+          status: 'success',
+          duration: 5000,
+          position: 'bottom-right',
+          isClosable: true,
+        });
+        setTimeout(() => {
+          toast.close();
+        }, 5000);
       } else {
         const id = 2;
         if (!toast.isActive(id)) {
