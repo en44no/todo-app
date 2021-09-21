@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Box, IconButton, useToast } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
 import ToDoContext from '../context/ToDoContext';
+//
 
 const ToggleToDo = (toDo) => {
   const { getToDos, toggleToDo } = useContext(ToDoContext);
