@@ -11,18 +11,21 @@ const ToDoState = (props) => {
     } else {
       setToDos([]);
     }
+    console.log(allToDos);
   };
 
   const addToDo = (newToDo) => {
-    const toDo = { title: newToDo };
+    const toDo = { title: newToDo, completed: false };
     localStorage.setItem('toDos', JSON.stringify([...toDos, toDo]));
     setToDos(JSON.stringify([...toDos, toDo]));
   };
 
   const removeToDo = (toDo) => {
-    let ToDosWithoutDeleted = toDos.filter((t) => t.title !== toDo);
-    localStorage.setItem('toDos', JSON.stringify(ToDosWithoutDeleted));
+    let toDosWithoutDeleted = toDos.filter((t) => t.title !== toDo);
+    localStorage.setItem('toDos', JSON.stringify(toDosWithoutDeleted));
   };
+
+  const toggleToDo = (toDo) => {};
 
   return (
     <ToDoContext.Provider
@@ -31,6 +34,7 @@ const ToDoState = (props) => {
         getToDos,
         addToDo,
         removeToDo,
+        toggleToDo,
       }}
     >
       {props.children}
