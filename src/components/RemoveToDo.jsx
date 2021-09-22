@@ -4,7 +4,7 @@ import { DeleteIcon } from '@chakra-ui/icons';
 import ToDoContext from '../context/ToDoContext';
 
 const RemoveToDo = (toDo) => {
-  const { getToDos, removeToDo } = useContext(ToDoContext);
+  const { removeToDo } = useContext(ToDoContext);
   const toast = useToast();
 
   const remove = () => {
@@ -20,7 +20,6 @@ const RemoveToDo = (toDo) => {
     setTimeout(() => {
       toast.close();
     }, 5000);
-    getToDos();
   };
 
   return (

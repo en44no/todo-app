@@ -5,11 +5,7 @@ import RemoveToDo from './RemoveToDo';
 import ToggleToDo from './ToggleToDo';
 
 const ListToDos = () => {
-  const { toDos, getToDos } = useContext(ToDoContext);
-
-  useEffect(() => {
-    getToDos();
-  }, []);
+  const { toDos } = useContext(ToDoContext);
 
   return (
     <>

@@ -1,37 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ToDoContext from './ToDoContext';
 
 const ToDoState = (props) => {
   const [toDos, setToDos] = useState([]);
 
-  const getToDos = () => {
-    let allToDos = JSON.parse(localStorage.getItem('toDos'));
-    if (allToDos != null) {
-      setToDos(allToDos);
+  useEffect(() => {
+    let data = localStorage.getItem('toDos');
+    if (data != null) {
+      setToDos(JSON.parse(data));
     } else {
-      setToDos([]);
+      setToDos([{ title: 'Esta es una tarea de ejemplo.', completed: false }]);
     }
-    console.log(allToDos);
-  };
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('toDos', JSON.stringify(toDos));
+  }, [toDos]);
 
   const addToDo = (newToDo) => {
-    const toDo = { title: newToDo, completed: false };
-    localStorage.setItem('toDos', JSON.stringify([...toDos, toDo]));
-    setToDos(JSON.stringify([...toDos, toDo]));
+    setToDos([...toDos, { title: newToDo, completed: false }]);
   };
 
   const removeToDo = (toDo) => {
-    let toDosWithoutDeleted = toDos.filter((t) => t.title !== toDo);
-    localStorage.setItem('toDos', JSON.stringify(toDosWithoutDeleted));
+    setToDos(toDos.filter((t) => t.title !== toDo));
   };
 
-  const toggleToDo = (toDo) => {};
+  const toggleToDo = (toDo) => {
+    setToDos(
+      toDos.map((t) => (t.title === toDo.title ? { ...t, completed: true } : t))
+    );
+  };
 
   return (
     <ToDoContext.Provider
       value={{
         toDos: toDos,
-        getToDos,
         addToDo,
         removeToDo,
         toggleToDo,

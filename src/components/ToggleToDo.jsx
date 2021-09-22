@@ -5,7 +5,7 @@ import ToDoContext from '../context/ToDoContext';
 //
 
 const ToggleToDo = (toDo) => {
-  const { getToDos, toggleToDo } = useContext(ToDoContext);
+  const { toggleToDo } = useContext(ToDoContext);
   const toast = useToast();
 
   const toggle = () => {
@@ -25,7 +25,6 @@ const ToggleToDo = (toDo) => {
         toast.close();
       }, 5000);
     }
-    getToDos();
   };
 
   return (
