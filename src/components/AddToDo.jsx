@@ -14,7 +14,7 @@ import ToDoContext from '../context/ToDoContext';
 
 const AddToDo = () => {
   const [inputValue, setInputValue] = useState('');
-  const { toDos, getToDos, addToDo } = useContext(ToDoContext);
+  const { toDos, addToDo } = useContext(ToDoContext);
   const toast = useToast();
 
   const handleChange = (event) => {
@@ -33,7 +33,6 @@ const AddToDo = () => {
       if (!toDos.find((t) => t.title === inputValue)) {
         setInputValue('');
         addToDo(inputValue);
-        getToDos();
         toast({
           title: 'Tarea creada.',
           description: 'Has creado la tarea.',
