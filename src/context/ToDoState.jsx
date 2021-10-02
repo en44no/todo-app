@@ -28,7 +28,9 @@ const ToDoState = (props) => {
 
   const toggleToDo = (toDo) => {
     setToDos(
-      toDos.map((t) => (t.title === toDo.title ? { ...t, completed: true } : t))
+      toDos.map((t) =>
+        t.title === toDo.title ? { ...t, completed: !toDo.completed } : t
+      )
     );
   };
 
