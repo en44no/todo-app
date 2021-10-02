@@ -32,7 +32,11 @@ const RemoveToDo = (toDo) => {
         transform: 'scale(1.05)',
       }}
     >
-      <IconButton variant='ghost' icon={<DeleteIcon color='red.500' />} />
+      <IconButton
+        variant='ghost'
+        aria-label='removeButton'
+        icon={<DeleteIcon color='red.500' />}
+      />
     </Box>
   );
 };
