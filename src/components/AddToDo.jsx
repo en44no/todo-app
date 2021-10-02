@@ -126,6 +126,7 @@ const AddToDo = () => {
               <IconButton
                 _focus={{ outline: 0 }}
                 variant='ghost'
+                aria-label='addTodo'
                 icon={<AddIcon color='blue.500' />}
               />
             }
