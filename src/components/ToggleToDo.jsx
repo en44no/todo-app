@@ -39,7 +39,11 @@ const ToggleToDo = (toDo) => {
         transform: 'scale(1.05)',
       }}
     >
-      <IconButton variant='ghost' icon={<CheckIcon color='green.500' />} />
+      <IconButton
+        variant='ghost'
+        aria-label='toggleToDo'
+        icon={<CheckIcon color='green.500' />}
+      />
     </Box>
   );
 };
