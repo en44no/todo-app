@@ -3,6 +3,7 @@ import ToDoContext from './ToDoContext';
 
 const ToDoState = (props) => {
   const [toDos, setToDos] = useState([]);
+  const [selectedValue, setSelectedValue] = useState('all');
   //
   useEffect(() => {
     let data = localStorage.getItem('toDos');
@@ -31,6 +32,10 @@ const ToDoState = (props) => {
     );
   };
 
+  const setSelectValue = (value) => {
+    setSelectedValue(value);
+  };
+
   return (
     <ToDoContext.Provider
       value={{
@@ -38,6 +43,8 @@ const ToDoState = (props) => {
         addToDo,
         removeToDo,
         toggleToDo,
+        selectedValue: selectedValue,
+        setSelectValue,
       }}
     >
       {props.children}
