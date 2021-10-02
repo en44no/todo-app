@@ -1,14 +1,8 @@
 import { useColorMode } from '@chakra-ui/color-mode';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
-import {
-  Container,
-  Heading,
-  Button,
-  Select,
-  Box,
-  IconButton,
-} from '@chakra-ui/react';
+import { Container, Heading, Button, Box, IconButton } from '@chakra-ui/react';
 import React from 'react';
+import FilterToDo from './FilterToDo';
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -28,12 +22,14 @@ const Header = () => {
                 transition: 'transform .2s',
                 transform: 'scale(1.02)',
               }}
+              aria-label='darkMode'
               onClick={toggleColorMode}
             >
               {colorMode === 'light' ? (
                 <IconButton
                   backgroundColor={'#dfe6e9'}
                   _hover={{ bg: '#edf2f7' }}
+                  aria-label='lightModeButton'
                 >
                   <SunIcon color='#000' />
                 </IconButton>
@@ -41,35 +37,13 @@ const Header = () => {
                 <IconButton
                   backgroundColor={'#1a202c'}
                   _hover={{ bg: '#2c313d' }}
+                  aria-label='darkModeButton'
                 >
                   <MoonIcon color='#fff' />
                 </IconButton>
               )}
             </Button>
-            <Select
-              cursor='pointer'
-              _hover={{
-                bg: bgColor,
-                transition: 'transform .2s',
-                transform: 'scale(1.02)',
-              }}
-              _focus={{ border: 'none' }}
-              border='none'
-              w={['100%', '37%', '25%']}
-              mt={['0.8rem', '0rem']}
-              mb={['0.8rem', '0rem']}
-              borderRadius='lg'
-              borderEndEndRadius='none'
-              borderEndStartRadius='none'
-              boxShadow='base'
-              float='right'
-            >
-              <option value='option1' defaultValue>
-                Todas
-              </option>
-              <option value='option2'>Completadas</option>
-              <option value='option3'>Pendientes</option>
-            </Select>
+            <FilterToDo />
           </Heading>
         </Box>
       </Container>
