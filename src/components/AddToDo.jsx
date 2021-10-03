@@ -37,13 +37,10 @@ const AddToDo = () => {
           title: 'Tarea creada.',
           description: 'Has creado la tarea.',
           status: 'success',
-          duration: 5000,
+          duration: 3000,
           position: 'bottom-right',
           isClosable: true,
         });
-        setTimeout(() => {
-          toast.close();
-        }, 5000);
       } else {
         const id = 2;
         if (!toast.isActive(id)) {
@@ -52,13 +49,10 @@ const AddToDo = () => {
             title: 'Error al crear la tarea.',
             description: 'Ya tienes una tarea con esa descripción.',
             status: 'warning',
-            duration: 5000,
+            duration: 3000,
             position: 'bottom-right',
             isClosable: true,
           });
-          setTimeout(() => {
-            toast.close();
-          }, 5000);
         }
       }
     } else {

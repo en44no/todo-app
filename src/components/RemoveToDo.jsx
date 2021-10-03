@@ -13,13 +13,10 @@ const RemoveToDo = (toDo) => {
       title: 'Tarea eliminada.',
       description: 'Has eliminado la tarea.',
       status: 'success',
-      duration: 5000,
+      duration: 3000,
       position: 'bottom-right',
       isClosable: true,
     });
-    setTimeout(() => {
-      toast.close();
-    }, 5000);
   };
 
   return (

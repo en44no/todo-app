@@ -16,13 +16,10 @@ const ToggleToDo = (toDo) => {
         toDo.toDo.completed ? 'pendiente.' : 'completada.'
       }`,
       status: toDo.toDo.completed ? 'warning' : 'success',
-      duration: 5000,
+      duration: 3000,
       position: 'bottom-right',
       isClosable: true,
     });
-    setTimeout(() => {
-      toast.close();
-    }, 5000);
   };
 
   return (
