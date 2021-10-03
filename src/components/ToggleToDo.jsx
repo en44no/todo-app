@@ -1,25 +1,22 @@
 import React, { useContext } from 'react';
-import { Box, IconButton, useToast } from '@chakra-ui/react';
+import { Box, IconButton } from '@chakra-ui/react';
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons';
 import ToDoContext from '../context/ToDoContext';
+import Notification from './Notification';
 //
 
 const ToggleToDo = (toDo) => {
   const { toggleToDo } = useContext(ToDoContext);
-  const toast = useToast();
 
   const toggle = () => {
     toggleToDo(toDo.toDo);
-    toast({
-      title: toDo.toDo.completed ? 'Tarea pendiente.' : 'Tarea completada.',
-      description: `Has marcado la tarea como ${
+    Notification(
+      toDo.toDo.completed ? 'Tarea pendiente.' : 'Tarea completada.',
+      `Has marcado la tarea como ${
         toDo.toDo.completed ? 'pendiente.' : 'completada.'
       }`,
-      status: toDo.toDo.completed ? 'warning' : 'success',
-      duration: 3000,
-      position: 'bottom-right',
-      isClosable: true,
-    });
+      toDo.toDo.completed ? 'warning' : 'success'
+    );
   };
 
   return (

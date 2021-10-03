@@ -1,22 +1,15 @@
 import React, { useContext } from 'react';
-import { Box, IconButton, useToast } from '@chakra-ui/react';
+import { Box, IconButton } from '@chakra-ui/react';
 import { DeleteIcon } from '@chakra-ui/icons';
 import ToDoContext from '../context/ToDoContext';
+import Notification from './Notification';
 
 const RemoveToDo = (toDo) => {
   const { removeToDo } = useContext(ToDoContext);
-  const toast = useToast();
 
   const remove = () => {
     removeToDo(toDo.toDo.title);
-    toast({
-      title: 'Tarea eliminada.',
-      description: 'Has eliminado la tarea.',
-      status: 'success',
-      duration: 3000,
-      position: 'bottom-right',
-      isClosable: true,
-    });
+    Notification('Tarea eliminada.', 'Has eliminado la tarea.', 'success');
   };
 
   return (

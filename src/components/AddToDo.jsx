@@ -6,16 +6,15 @@ import {
   Input,
   Spinner,
   IconButton,
-  useToast,
 } from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
 import React, { useState, useContext } from 'react';
 import ToDoContext from '../context/ToDoContext';
+import Notification from './Notification';
 
 const AddToDo = () => {
   const [inputValue, setInputValue] = useState('');
   const { toDos, addToDo } = useContext(ToDoContext);
-  const toast = useToast();
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -33,44 +32,20 @@ const AddToDo = () => {
       if (!toDos.find((t) => t.title === inputValue)) {
         setInputValue('');
         addToDo(inputValue);
-        toast({
-          title: 'Tarea creada.',
-          description: 'Has creado la tarea.',
-          status: 'success',
-          duration: 3000,
-          position: 'bottom-right',
-          isClosable: true,
-        });
+        Notification('Tarea creada.', 'Has creado la tarea.', 'success');
       } else {
-        const id = 2;
-        if (!toast.isActive(id)) {
-          toast({
-            id: 2,
-            title: 'Error al crear la tarea.',
-            description: 'Ya tienes una tarea con esa descripción.',
-            status: 'warning',
-            duration: 3000,
-            position: 'bottom-right',
-            isClosable: true,
-          });
-        }
+        Notification(
+          'Error al crear la tarea.',
+          'Ya tienes una tarea con esa descripción.',
+          'warning'
+        );
       }
     } else {
-      const id = 3;
-      if (!toast.isActive(id)) {
-        toast({
-          id: 3,
-          title: 'Error al crear tarea.',
-          description: 'Debes agregar una descripción.',
-          status: 'error',
-          duration: 5000,
-          position: 'bottom-right',
-          isClosable: true,
-        });
-        setTimeout(() => {
-          toast.close();
-        }, 5000);
-      }
+      Notification(
+        'Error al crear tarea.',
+        'Debes agregar una descripción.',
+        'error'
+      );
     }
   }
 
