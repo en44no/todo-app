@@ -11,11 +11,11 @@ const ToggleToDo = (toDo) => {
   const toggle = () => {
     toggleToDo(toDo.toDo);
     toast({
-      title: toDo.toDo.completed ? 'Tarea completada.' : 'Tarea pendiente.',
+      title: toDo.toDo.completed ? 'Tarea pendiente.' : 'Tarea completada.',
       description: `Has marcado la tarea como ${
-        toDo.toDo.completed ? 'completada.' : 'pendiente.'
+        toDo.toDo.completed ? 'pendiente.' : 'completada.'
       }`,
-      status: toDo.toDo.completed ? 'success' : 'warning',
+      status: toDo.toDo.completed ? 'warning' : 'success',
       duration: 5000,
       position: 'bottom-right',
       isClosable: true,
