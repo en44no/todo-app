@@ -3,12 +3,13 @@ import { Box, Grid, GridItem } from '@chakra-ui/react';
 import RemoveToDo from '../RemoveToDo';
 import ToggleToDo from '../ToggleToDo';
 import '../../index.css';
+import EditToDo from '../EditToDo';
 
 const ListToDosGrid = ({ toDo }) => {
   return (
     <Grid
       key={toDo.title}
-      templateColumns='repeat(5, 1fr)'
+      templateColumns='repeat(8, 1fr)'
       gap={4}
       alignItems='center'
       w='100%'
@@ -32,12 +33,16 @@ const ListToDosGrid = ({ toDo }) => {
         </>
       ) : (
         <>
-          <GridItem colSpan={4}>
-            <Box fontSize='1rem'>{toDo.title}</Box>
+          <GridItem colSpan={7}>
+            <EditToDo toDoToEdit={toDo.title} />
           </GridItem>
+
+          {/* <GridItem colSpan={4}>
+            <Box fontSize='1rem'>{toDo.title}</Box>
+          </GridItem> */}
         </>
       )}
-      <GridItem colStart={6} colEnd={6}>
+      <GridItem colStart={9} colEnd={9}>
         <ToggleToDo toDo={toDo} />
         <RemoveToDo toDo={toDo} />
       </GridItem>

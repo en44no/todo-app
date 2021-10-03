@@ -34,6 +34,12 @@ const ToDoState = (props) => {
     );
   };
 
+  const editToDo = (oldTitle, newTitle) => {
+    setToDos(
+      toDos.map((t) => (t.title === oldTitle ? { ...t, title: newTitle } : t))
+    );
+  };
+
   const setSelectValue = (value) => {
     setSelectedValue(value);
   };
@@ -47,6 +53,7 @@ const ToDoState = (props) => {
         toggleToDo,
         selectedValue: selectedValue,
         setSelectValue,
+        editToDo,
       }}
     >
       {props.children}
