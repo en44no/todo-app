@@ -14,7 +14,7 @@ import Notification from './Notification';
 
 const AddToDo = () => {
   const [inputValue, setInputValue] = useState('');
-  const { toDos, addToDo } = useContext(ToDoContext);
+  const { toDos, addToDo, selectedValue } = useContext(ToDoContext);
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -27,12 +27,25 @@ const AddToDo = () => {
     }
   };
 
+  const createToDoSuccess = (isCompleted) => {
+    setInputValue('');
+    addToDo(inputValue, isCompleted);
+  };
+
   function createToDo() {
     if (inputValue !== '') {
       if (!toDos.find((t) => t.title === inputValue)) {
-        setInputValue('');
-        addToDo(inputValue);
-        Notification('Tarea creada.', 'Has creado la tarea.', 'success');
+        if (selectedValue === 'completed') {
+          createToDoSuccess(true);
+          Notification(
+            'Tarea creada.',
+            'Has creado la tarea como completada.',
+            'success'
+          );
+        } else {
+          createToDoSuccess(false);
+          Notification('Tarea creada.', 'Has creado la tarea.', 'success');
+        }
       } else {
         Notification(
           'Error al crear la tarea.',

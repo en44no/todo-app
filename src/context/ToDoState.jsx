@@ -18,8 +18,8 @@ const ToDoState = (props) => {
     localStorage.setItem('toDos', JSON.stringify(toDos));
   }, [toDos]);
 
-  const addToDo = (newToDo) => {
-    setToDos([...toDos, { title: newToDo, completed: false }]);
+  const addToDo = (newToDo, completed) => {
+    setToDos([...toDos, { title: newToDo, completed: completed }]);
   };
 
   const removeToDo = (toDo) => {
