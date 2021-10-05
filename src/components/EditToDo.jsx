@@ -5,18 +5,28 @@ import Notification from './Notification';
 
 const EditToDo = ({ toDoToEdit }) => {
   const [value, setValue] = useState(toDoToEdit);
-  const { editToDo } = useContext(ToDoContext);
+  const { toDos, editToDo } = useContext(ToDoContext);
 
   const oldTitle = toDoToEdit;
 
   const editToDoPrivate = (oldTitle, newTitle) => {
     if (oldTitle !== newTitle && newTitle !== '') {
-      Notification(
-        'Tarea editada correctamente.',
-        'Has editado la tarea.',
-        'success'
-      );
-      editToDo(oldTitle, newTitle);
+      if (!toDos.find((t) => t.title === newTitle)) {
+        Notification(
+          'Tarea editada correctamente.',
+          'Has editado la tarea.',
+          'success'
+        );
+        editToDo(oldTitle, newTitle);
+      } else {
+        Notification(
+          'Error al crear la tarea.',
+          'Ya tienes una tarea con esa descripción.',
+          'warning'
+        );
+        editToDo(oldTitle, oldTitle);
+        setValue(oldTitle);
+      }
     }
     if (newTitle === '') {
       setValue(oldTitle);
