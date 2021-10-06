@@ -9,9 +9,16 @@ const EditToDo = ({ toDoToEdit }) => {
 
   const oldTitle = toDoToEdit;
 
+  const formatText = (string) => {
+    let newString = string[0].toUpperCase() + string.slice(1).toLowerCase();
+    console.log(newString);
+    return newString;
+  };
+
   const editToDoPrivate = (oldTitle, newTitle) => {
     if (oldTitle !== newTitle && newTitle !== '') {
-      if (!toDos.find((t) => t.title === newTitle)) {
+      const text = formatText(newTitle.trim());
+      if (!toDos.find((t) => t.title === text.trim())) {
         Notification(
           'Tarea editada correctamente.',
           'Has editado la tarea.',

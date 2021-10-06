@@ -27,23 +27,30 @@ const AddToDo = () => {
     }
   };
 
-  const createToDoSuccess = (isCompleted) => {
+  const createToDoSuccess = (text, isCompleted) => {
     setInputValue('');
-    addToDo(inputValue, isCompleted);
+    addToDo(text, isCompleted);
+  };
+
+  const formatText = (string) => {
+    let newString = string[0].toUpperCase() + string.slice(1).toLowerCase();
+    console.log(newString);
+    return newString;
   };
 
   function createToDo() {
-    if (inputValue !== '' && inputValue.trim()) {
-      if (!toDos.find((t) => t.title === inputValue.trim())) {
+    if (inputValue !== '') {
+      const text = formatText(inputValue.trim());
+      if (!toDos.find((t) => t.title === text.trim())) {
         if (selectedValue === 'completed') {
-          createToDoSuccess(true);
+          createToDoSuccess(text, true);
           Notification(
             'Tarea creada.',
             'Has creado la tarea como completada.',
             'success'
           );
         } else {
-          createToDoSuccess(false);
+          createToDoSuccess(text, false);
           Notification('Tarea creada.', 'Has creado la tarea.', 'success');
         }
       } else {
