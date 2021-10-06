@@ -10,7 +10,7 @@ const EditToDo = ({ toDoToEdit }) => {
   const oldTitle = toDoToEdit;
 
   const formatText = (string) => {
-    let newString = string[0].toUpperCase() + string.slice(1).toLowerCase();
+    let newString = string[0].toUpperCase() + string.slice(1);
     console.log(newString);
     return newString;
   };
@@ -24,7 +24,7 @@ const EditToDo = ({ toDoToEdit }) => {
           'Has editado la tarea.',
           'success'
         );
-        editToDo(oldTitle, newTitle);
+        editToDo(oldTitle, text);
       } else {
         Notification(
           'Error al crear la tarea.',

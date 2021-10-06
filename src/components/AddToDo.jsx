@@ -33,7 +33,7 @@ const AddToDo = () => {
   };
 
   const formatText = (string) => {
-    let newString = string[0].toUpperCase() + string.slice(1).toLowerCase();
+    let newString = string[0].toUpperCase() + string.slice(1);
     console.log(newString);
     return newString;
   };
