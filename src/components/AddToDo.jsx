@@ -33,8 +33,8 @@ const AddToDo = () => {
   };
 
   function createToDo() {
-    if (inputValue !== '') {
-      if (!toDos.find((t) => t.title === inputValue)) {
+    if (inputValue !== '' && inputValue.trim()) {
+      if (!toDos.find((t) => t.title === inputValue.trim())) {
         if (selectedValue === 'completed') {
           createToDoSuccess(true);
           Notification(
