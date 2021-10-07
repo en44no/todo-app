@@ -1,14 +1,14 @@
-## LightHouse tests
+## ✔️ LightHouse tests
 
 >![App Screenshot](https://user-images.githubusercontent.com/57118285/136107999-982cefe3-c7dd-4751-971e-ed71e4e8743a.png)
 
 
-## Screenshots
+## 📷 Screenshots
 
 >![App Screenshot](https://user-images.githubusercontent.com/57118285/136467446-ae96aa43-f2f5-422a-8dc5-214412650d7f.png)
 
 
-## Features
+## 📝 Features
 
 >- Light/dark mode toggle
 >- Create tasks
@@ -21,7 +21,7 @@
 >- Checks for task creation and editing
 
 
-## Run Locally
+## 💻 Run Locally
 
 >Clone the project
 >
