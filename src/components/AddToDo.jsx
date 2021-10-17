@@ -94,6 +94,7 @@ const AddToDo = () => {
           )
           <Input
             border='none'
+            autoFocus
             size='lg'
             boxShadow='base'
             placeholder='Crea una nueva tarea...'
