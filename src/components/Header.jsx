@@ -16,8 +16,8 @@ const Header = () => {
             {colorMode === 'light' ? (
               <Button
                 boxShadow='base'
-                backgroundColor={'#dfe6e9'}
                 aria-label='lightModeButton'
+                bg='ligth'
                 ml='1rem'
                 w={'5%'}
                 _hover={{
@@ -36,6 +36,7 @@ const Header = () => {
                 boxShadow='base'
                 ml='1rem'
                 w={'5%'}
+                bg='dark'
                 _hover={{
                   bg: bgColor,
                   transition: 'transform .2s',
@@ -44,7 +45,6 @@ const Header = () => {
                 _focus={{ boxShadow: 'base' }}
                 aria-label='darkMode'
                 onClick={toggleColorMode}
-                backgroundColor={'#1a202c'}
               >
                 <MoonIcon color='#fff' />
               </Button>
