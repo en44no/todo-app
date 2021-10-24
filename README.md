@@ -1,6 +1,6 @@
 ## ✔️ LightHouse tests
 
->![App Screenshot](![image](https://user-images.githubusercontent.com/57118285/138582878-0499ed90-8e7b-4a17-9f99-a5439e6c6753.png))
+>![App Screenshot](https://user-images.githubusercontent.com/57118285/138582913-2a2095af-90a1-404d-9845-9f11294cb31a.png)
 
 
 ## 📷 Screenshots
