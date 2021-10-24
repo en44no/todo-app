@@ -14,7 +14,7 @@ const theme = extendTheme({
         bg: mode('#e3e3e3', '#272d38')(props),
         color: mode('black', 'white')(props),
         margin: 0,
-        padding: '2rem',
+        padding: { base: '2rem 0.5rem', md: '2rem', lg: '2rem' },
         minHeight: '100vh',
       },
     }),
