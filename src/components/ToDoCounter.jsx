@@ -10,6 +10,7 @@ const ToDoCounter = (props) => {
   return (
     <>
       <Text
+        textAlign={{ base: 'center', md: 'left', lg: 'left' }}
         fontSize='1.03rem'
         mt='1rem'
         mb='-0.5rem'
