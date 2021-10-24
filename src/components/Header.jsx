@@ -1,10 +1,13 @@
 import { useColorMode } from '@chakra-ui/color-mode';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { Container, Heading, Button, Box } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
+import ToDoContext from '../context/ToDoContext';
 import FilterToDo from './FilterToDo';
+import ToDoCounter from './ToDoCounter';
 
 const Header = () => {
+  const { selectedValue } = useContext(ToDoContext);
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = colorMode === 'dark' ? '#2c313d' : '#edf2f7';
   return (
@@ -52,6 +55,8 @@ const Header = () => {
             <FilterToDo />
           </Heading>
         </Box>
+        {selectedValue !== 'completed' && <ToDoCounter type='pendientes' />}
+        {selectedValue === 'completed' && <ToDoCounter type='completadas' />}
       </Container>
     </>
   );
