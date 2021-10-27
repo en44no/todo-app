@@ -9,7 +9,10 @@
 >
 >![App Screenshot](https://user-images.githubusercontent.com/57118285/139095085-1cda231d-82bc-4aba-9f30-aa205678dba1.png)
 
+## ⚙ Technologies
 
+>![ReactJS](https://img.shields.io/badge/React%20JS-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+>![ChakraUI](https://img.shields.io/badge/-Chakra%20UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white)
 
 ## 📝 Features
 
