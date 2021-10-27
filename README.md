@@ -49,6 +49,10 @@
 >  npm start
 >```
 
+## 🌎 Run on Vercel
+> https://nahuelmarquez.vercel.app
+
+
   
 
 ## 🔗 Links
