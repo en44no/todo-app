@@ -11,8 +11,8 @@
 
 ## ⚙ Technologies
 
->![ReactJS](https://img.shields.io/badge/React%20JS-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
->![ChakraUI](https://img.shields.io/badge/-Chakra%20UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white)
+>[![ReactJS](https://img.shields.io/badge/React%20JS-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://es.reactjs.org/)
+>[![ChakraUI](https://img.shields.io/badge/-Chakra%20UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white)](https://chakra-ui.com/)
 
 ## 📝 Features
 
