@@ -19,6 +19,8 @@
 >- Filter tasks
 >- Notifications
 >- Checks for task creation and editing
+>- Pending task counter
+>- Completed task counter
 
 
 ## 💻 Run Locally
