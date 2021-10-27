@@ -5,7 +5,10 @@
 
 ## 📷 Screenshots
 
->![App Screenshot](https://user-images.githubusercontent.com/57118285/138615284-47bb59a1-ae62-4207-ad0b-e926fa14a264.png)
+>![App Screenshot](https://user-images.githubusercontent.com/57118285/139095142-96c49b36-4991-4c31-b70c-c2e58c46c354.png)
+>
+>![App Screenshot](https://user-images.githubusercontent.com/57118285/139095085-1cda231d-82bc-4aba-9f30-aa205678dba1.png)
+
 
 
 ## 📝 Features
