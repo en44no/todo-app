@@ -9,7 +9,7 @@ import ToDoCounter from './ToDoCounter';
 const Header = () => {
   const { selectedValue } = useContext(ToDoContext);
   const { colorMode, toggleColorMode } = useColorMode();
-  const bgColor = colorMode === 'dark' ? '#2c313d' : '#edf2f7';
+  const bgColor = colorMode === 'dark' ? '#272d38' : '#e3e3e3';
   return (
     <>
       <Container maxW={'container.md'}>
