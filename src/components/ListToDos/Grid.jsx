@@ -33,13 +33,9 @@ const ListToDosGrid = ({ toDo }) => {
 				</>
 			) : (
 				<>
-					<GridItem colSpan={7}>
-						<EditToDo toDoToEdit={toDo.title} />
+          <GridItem colSpan={7}>
+            <EditToDo toDoToEdit={toDo.title} />
 					</GridItem>
-
-					{/* <GridItem colSpan={4}>
-            <Box fontSize='1rem'>{toDo.title}</Box>
-          </GridItem> */}
 				</>
 			)}
 			<GridItem colStart={9} colEnd={9}>
