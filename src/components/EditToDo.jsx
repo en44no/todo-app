@@ -47,7 +47,7 @@ const EditToDo = ({ toDoToEdit }) => {
   return (
     <>
       <Editable value={value} onSubmit={() => editToDoPrivate(oldTitle, value)}>
-        <EditablePreview />
+        <EditablePreview width='100%'  />
         <EditableInput
           onChange={(e) => setValue(e.target.value)}
           _focus={{ border: 'none' }}
