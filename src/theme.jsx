@@ -15,7 +15,7 @@ const theme = extendTheme({
         color: mode("black", "white")(props),
         margin: 0,
         padding: { base: "2rem 0.5rem", md: "2rem", lg: "2rem" },
-        height: ["85vh", null, "100vh"],
+        height: ["100%", null, "100vh"],
         overflow: "hidden",
       },
     }),

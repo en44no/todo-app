@@ -30,9 +30,12 @@ const Social = () => {
     <>
       <Flex
         as="section"
-        position="absolute"
-        bottom={["0px", null, "12px"]}
-        right="12px"
+        position="fixed"
+        bottom="0"
+        right="0"
+        mr="1rem"
+        ml="1rem"
+        mb="1rem"
       >
         <a
           href="https://github.com/en44no"
