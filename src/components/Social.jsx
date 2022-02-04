@@ -4,8 +4,8 @@ import {
   UilLinkedinAlt,
   UilGithubAlt,
   UilEnvelopeAdd,
-  UilWhatsapp,
 } from "@iconscout/react-unicons";
+import { RiGlobalLine } from "react-icons/ri";
 
 const Social = () => {
   const notification = useToast();
@@ -72,7 +72,7 @@ const Social = () => {
         <IconButton
           _hover={{ color: "#DA3D3D" }}
           bg="none"
-          mr="1"
+          mr="0"
           title="Gmail address"
           aria-label="GetMyEmailAddressButton"
           onClick={() => notificationAndCopyToClipboard()}
@@ -80,17 +80,17 @@ const Social = () => {
           <UilEnvelopeAdd size="1.7rem" />
         </IconButton>
         <a
-          href="https://api.whatsapp.com/send/?phone=59894018406&text=%C2%A1Hola!+Te+estoy+contactando+luego+de+ver+tu+p%C3%A1gina+web."
+          href="https://nahuelmarquez.com"
           target="_blank"
           rel="noreferrer"
-          title="Whatsapp"
+          title="Personal website"
         >
           <IconButton
             _hover={{ color: "#48a41e" }}
             bg="none"
-            aria-label="RedirectToWhatsappButton"
+            aria-label="RedirectToPersonalWebsiteButton"
           >
-            <UilWhatsapp size="1.7rem" />
+            <RiGlobalLine size="1.6rem" />
           </IconButton>
         </a>
       </Flex>
