@@ -31,7 +31,7 @@ const Social = () => {
       <Flex
         as="section"
         position="absolute"
-        bottom={["40px", null, "12px"]}
+        bottom={["0px", null, "12px"]}
         right="12px"
       >
         <a

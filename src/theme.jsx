@@ -1,8 +1,8 @@
-import { extendTheme } from '@chakra-ui/react';
-import { mode } from '@chakra-ui/theme-tools';
+import { extendTheme } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 
 const config = {
-  initialColorMode: 'light',
+  initialColorMode: "light",
   useSystemColorMode: false,
 };
 
@@ -11,22 +11,22 @@ const theme = extendTheme({
   styles: {
     global: (props) => ({
       body: {
-        bg: mode('#e3e3e3', '#272d38')(props),
-        color: mode('black', 'white')(props),
+        bg: mode("#e3e3e3", "#272d38")(props),
+        color: mode("black", "white")(props),
         margin: 0,
-        padding: { base: '2rem 0.5rem', md: '2rem', lg: '2rem' },
-        minHeight: '100vh',
+        padding: { base: "2rem 0.5rem", md: "2rem", lg: "2rem" },
+        height: ["90vh", null, "100vh"],
       },
     }),
   },
   colors: {
-    greyHover: '#edf2f7',
-    greyDarkerHover: '#2c313d',
+    greyHover: "#edf2f7",
+    greyDarkerHover: "#2c313d",
   },
   components: {
     Button: {
       baseStyle: {
-        _focus: { boxShadow: 'none' },
+        _focus: { boxShadow: "none" },
       },
     },
   },
