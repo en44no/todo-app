@@ -77,7 +77,6 @@ const FilterToDo = () => {
           bgColor={bgColor}
           mt={["-7px", "-8px", "-7px"]}
           ml={["0px", null, "0px"]}
-          mr="-0.6px"
           boxShadow="base"
           borderTopEndRadius="none"
           borderTopStartRadius={["none", null, null]}
