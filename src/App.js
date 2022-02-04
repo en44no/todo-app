@@ -1,13 +1,14 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import AddToDo from './components/AddToDo';
-import Header from './components/Header';
+import { ChakraProvider } from "@chakra-ui/react";
+import AddToDo from "./components/AddToDo";
+import Header from "./components/Header";
 
-import theme from './theme';
-import React from 'react';
+import theme from "./theme";
+import React from "react";
 
 // Context
-import ToDoState from './context/ToDoState';
-import List from './components/ListToDos/List';
+import ToDoState from "./context/ToDoState";
+import List from "./components/ListToDos/List";
+import Social from "./components/Social";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Header />
         <AddToDo />
         <List />
+        <Social />
       </ChakraProvider>
     </ToDoState>
   );

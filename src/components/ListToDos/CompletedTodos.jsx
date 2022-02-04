@@ -12,7 +12,7 @@ const CompletedTodos = () => {
       {completedTodos
         ? [...completedTodos]
             .reverse()
-            .map((toDo) => <Grid toDo={toDo} key={toDo.title} />)
+          .map((toDo) => <Grid toDo={toDo} key={toDo.title} />)
         : ''}
     </>
   );
